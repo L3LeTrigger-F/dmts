@@ -5,32 +5,51 @@ const PsychologicalTracePage = () => {
     const data={
         nodes:[
             {
-                id:"社会属性空间->互联网社交空间",
-                label:"社会属性空间->互联网社交空间",
+                id:"社会属性空间-职业",
+                label:"社会属性空间-职业",
                 socialAttributes:[
-
+                    {
+                        key: "职业",
+                        value: "智能合约审计员和web/pwn技术顾问",
+                        url: "https://aaronesau.com/"
+                    },
+                   
                 ]
             },
             {
-                id:"社会属性空间->互联网工作空间",
-                label:"社会属性空间->互联网社交空间",
+                id:"互联网工作空间-github",
+                label:"互联网工作空间-github",
                 socialAttributes:[
                     {
-                        key: "社会属性空间-github主页-职业",
-                        value: "全栈工程师",
+                        key: "github主页",
                         url: "https://aaronesau.com/"
                     },
+                    {
+                        key: "仓库数量",
+                        value:105
+                    },
+                    {
+                        key: "Stars",
+                        value:369
+                    }
+                   
+                ]
+            },
+            {
+                id:"互联网社交空间-社交言论分析-领域",
+                label:"互联网社交空间-社交言论分析-领域",
+                socialAttributes:[
                     {
                         key: "互联网社交空间-社交言论分析-领域",
                         value: "计算机",
                         url: "https://twitter.com/arinerron/status/1448107828846026754"
                     }
-                
                 ]
             },
+            
             {
-                id:"性格特质空间->互联网学习空间",
-                label:"性格特质空间->互联网学习空间",
+                id:"性格特质空间/jaywcjlove",
+                label:"性格特质空间/jaywcjlove",
                 socialAttributes:[
                     {
                         id: "github.com/jaywcjlove",
@@ -50,7 +69,12 @@ const PsychologicalTracePage = () => {
                                 fill: "#32E0C4"
                             }
                         }
-                    },
+                    },]
+            },
+            {
+                id:"互联网学习空间",
+                label:"互联网学习空间",
+                socialAttributes:[
                     {
                         key: "互联网学习空间-提交数",
                         value: "407提交(今年来)",
@@ -66,9 +90,12 @@ const PsychologicalTracePage = () => {
                     }
                 ]
             },
+            
+            
+            
             {
-                id:"性格特质空间->互联网工作空间",
-                label:"性格特质空间->互联网工作空间",
+                id:"性格特质空间/hartescout",
+                label:"性格特质空间/hartescout",
                 socialAttributes:[
                     {
                         id: "github.com/hartescout",
@@ -88,7 +115,13 @@ const PsychologicalTracePage = () => {
                                 fill: "#32E0C4"
                             }
                         }
-                    },
+                    }
+                ]
+            },
+            {
+                id:"互联网工作空间",
+                label:"互联网工作空间",
+                socialAttributes:[
                     {
                         key: "互联网工作空间-提交数",
                         value: "154提交(今年来)",
@@ -105,26 +138,68 @@ const PsychologicalTracePage = () => {
                     }
                 ]
             },
+            
             {
-                id:"互联网娱乐空间->互联网社交空间",
-                label:"互联网娱乐空间->互联网社交空间",
+                id:"互联网娱乐空间",
+                label:"互联网娱乐空间",
                 socialAttributes:[
-                        {
-                            key: "娱乐方式-互联网娱乐空间",
-                            value: "摄影",
-                        },
+                    {
+                        key: "爱好",
+                        value: "摄影",
+                    }   
+                    ]
+                },
+            
+        
+                {
+                    id:"互联网社交空间",
+                    label:"互联网社交空间",
+                    socialAttributes:[
                         {
                             key: "来源-互联网社交空间",
                             value: "mastodon社交平台",
                             url: "https://mastodon.social/@acedrew"
-                        },
-                        
-                    ]
-                },
+                        }   
+                        ]
+                    }
             ]
-            }            
+            }  
+    edges:[
+        {
+            source: "社会属性空间-职业",
+            target: "互联网社交空间-社交言论分析-领域",
+        },
+        {
+            source: "社会属性空间-职业",
+            target: "互联网工作空间-github",
+        },
+        {
+            source: "性格特质空间/jaywcjlove",
+            target: "互联网学习空间",
+        },
+        {
+            source: "性格特质空间/hartescout",
+            target: "互联网工作空间",
+        },
+        {
+            source: "互联网娱乐空间",
+            target: "互联网社交空间",
+        }
+    ] 
     return (
-        <></>
+        <ProCard
+        split="horizontal"
+        headerBordered
+        bordered
+    >
+        <ProCard
+            split='vertical'
+        >
+            <ProCard title="trace">
+                <AttributeGraph data={data}></AttributeGraph>
+            </ProCard>
+            </ProCard>
+    </ProCard>
     )
 }
 
