@@ -85,16 +85,22 @@ const FeatureFivePage = () => {
                     },
                 ]
             },
-            // {
-            //     id: "尽责性",
-            //     label: "尽责性",
-            //     socialAttributes: [
-            //         {
-            //             key: "",
-            //             value: "",
-            //         },
-            //     ]
-            // },
+            {
+                id: "尽责性",
+                label: "尽责性",
+                 socialAttributes: [
+                     {
+                         key: "代码文档",
+                         value: "可读性高",
+                         url:["https://github.com/RoPGen/RoPGen/tree/main/src/RoPGen-enabled%20DL-CAIS/code-imitator"]
+                     },
+                     {
+                        key: "代码注释",
+                        value: "清晰",
+                        url:["https://github.com/RoPGen/RoPGen/blob/main/src/RoPGen-enabled%20DL-CAIS/code-imitator/src/PyProject/featureextractionV2/StyloUnigramFeatures.py"]
+                    },
+                 ]
+             },
             {
                 id: "宜人性",
                 label: "宜人性",
